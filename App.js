@@ -13,7 +13,12 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ title: "Welcome" }}
+          options={{
+            title: "Welcome",
+            headerStyle: {
+              backgroundColor: "#fff",
+            },
+          }}
         />
         <Stack.Screen name="Pagina" component={Pagina} />
       </Stack.Navigator>
