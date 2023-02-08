@@ -9,6 +9,9 @@ const tints = {
   7: "#bfbdbb",
   8: "#d4d3d2",
   9: "#eae9e8",
+  carbs: "#44FF07",
+  proteins: "#FED60A",
+  fats: "#FB0007",
 };
 
-export default tints;
+export { tints };
