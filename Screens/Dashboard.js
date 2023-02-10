@@ -1,19 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import { Box, Button, Chip, HStack } from "@react-native-material/core";
-import { VictoryLabel, VictoryPie } from "victory-native";
 import { Svg } from "react-native-svg";
+import { Box, Chip, HStack } from "@react-native-material/core";
+import { StatusBar } from "expo-status-bar";
+import { VictoryLabel, VictoryPie } from "victory-native";
 import { tints } from "../Styles/colors";
 
-const Home = ({ navigation }) => {
-  const graphData = [
-    { y: 100, type: "carbs" },
-    { y: 50, type: "proteins" },
-    { y: 20, type: "fats" },
-  ];
+const graphLabelText = "1000 Kcal";
 
-  const graphLabelText = "1000 Kcal";
+const graphData = [
+  { y: 100, type: "carbs" },
+  { y: 50, type: "proteins" },
+  { y: 20, type: "fats" },
+];
 
+const Dashboard = () => {
   return (
     <View style={styles.container}>
       <Box w={360} h={355} m={4} style={{ backgroundColor: tints[6], borderRadius: 20 }}>
@@ -58,14 +58,13 @@ const Home = ({ navigation }) => {
           />
         </HStack>
       </Box>
-      <Button title="pagina" onPress={() => navigation.navigate("Pagina", { name: "parametro" })} />
 
       <StatusBar style="auto" />
     </View>
   );
 };
 
-export default Home;
+export default Dashboard;
 
 const styles = StyleSheet.create({
   container: {

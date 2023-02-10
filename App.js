@@ -1,27 +1,18 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "./Screens/Home";
+import Dashboard from "./Screens/Dashboard";
 import Pagina from "./Screens/Pagina";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const Stack = createNativeStackNavigator();
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: "Welcome",
-            headerStyle: {
-              backgroundColor: "#fff",
-            },
-          }}
-        />
-        <Stack.Screen name="Pagina" component={Pagina} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Dashboard" component={Dashboard} />
+        <Tab.Screen name="Ingredienti" component={Pagina} initialParams={{ name: "parameter" }} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
