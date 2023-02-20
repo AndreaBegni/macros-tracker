@@ -25,4 +25,23 @@ const mergeData = async (key, value) => {
   }
 };
 
-export { storeData, getData, mergeData };
+const mergeObjectToArray = async (key, value) => {
+  try {
+    const jsonValue = await AsyncStorage.getItem(key);
+    const array = jsonValue != null ? JSON.parse(jsonValue) : [];
+    array.push(value);
+    await AsyncStorage.setItem(key, JSON.stringify(array));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const removeData = async (key) => {
+  try {
+    await AsyncStorage.removeItem(key);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export { storeData, getData, mergeData, removeData, mergeObjectToArray };
